@@ -1,6 +1,6 @@
 
 
-# Extractor de Recursos embebidos en ejecutables portables
+# Extractor de recursos embebidos en ejecutables portables
 
 Instrucciones:
 
@@ -11,11 +11,12 @@ Define el nombre del recurso a extraer, recomiendo explorar primero el ejecutabl
 
 Elige el tipo de extension con que extraerlo:
 
+
 `expected_resource_type_to_export = '.exe'
 `
 
-
 Y el directorio donde está el o los ejecutables a explorar para la extracción:
+
 `dir_path = 'pe_files_dir'
 `
 
