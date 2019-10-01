@@ -4,6 +4,8 @@
 
 Instrucciones:
 
+Desarrollado en Python 2.7.
+
 Define el nombre del recurso a extraer, recomiendo explorar primero el ejecutable con alguna herramienta tipo CFF Explorer. 
 
 `resource_name = 'PSEXESVC'
@@ -24,3 +26,5 @@ El script graba en un archivo XLSX los hash de cada recurso extraido y los propi
 
 `filename = 'extracted\\' + filename
 `
+
+Se incluye otro script `md5_files_dir.py` para generar los hashes de todos los archvos de una carpeta, así com su "imports hash" y añadirlos a un XLSX.
