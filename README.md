@@ -20,4 +20,7 @@ Y el directorio donde está el o los ejecutables a explorar para la extracción:
 `dir_path = 'pe_files_dir'
 `
 
-El script graba en un archivo XLSX los hash de cada recurso extraido.
+El script graba en un archivo XLSX los hash de cada recurso extraido y los propios recursos extraidos a la carpeta extracted.
+
+`filename = 'extracted\\' + filename
+`

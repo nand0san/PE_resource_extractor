@@ -5,6 +5,8 @@ import os
 import pefile
 import hashlib
 import xlsxwriter
+import errno
+
 
 # Declare name of section to export from PE files
 resource_name = 'PSEXESVC'
@@ -93,7 +95,10 @@ def main():
             print 'Extracting from... ' + item
             embedded_bin = pe_resource_extract(item, resource_name)
             # print embedded_bin
-            filename = resource_name + '_' + str(counter) + expected_resource_type_to_export
+            # formating extracted filename
+            con = str(counter).zfill(2)
+            item_name = os.path.basename(item)
+            filename = item_name + '_' + resource_name + '_' + con + expected_resource_type_to_export
             counter = counter + 1
 
             dump_to_file(filename, embedded_bin)
