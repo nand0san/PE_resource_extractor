@@ -56,16 +56,16 @@ def pe_resource_extract(item, _resource_name):
     return malcfg_data
 
 
-def dump_to_file(filename, data):
-    filename = 'extracted\\' + filename
-    if not os.path.exists(os.path.dirname(filename)):
+def dump_to_file(_filename, data):
+    _filename = 'extracted\\' + _filename
+    if not os.path.exists(os.path.dirname(_filename)):
         try:
-            os.makedirs(os.path.dirname(filename))
+            os.makedirs(os.path.dirname(_filename))
         except OSError as exc:  # Guard against race condition
             if exc.errno != errno.EEXIST:
                 raise
 
-    with open(filename, 'wb') as f:
+    with open(_filename, 'wb') as f:
         f.write(data)
 
 
@@ -100,10 +100,12 @@ def main():
             item_name = os.path.basename(item)
             filename = item_name + '_' + resource_name + '_' + con + expected_resource_type_to_export
             counter = counter + 1
-
+            # creates a file with de resource
             dump_to_file(filename, embedded_bin)
+            # md5 hash the resource
+            _filename = 'extracted\\' + filename
+            src_hash = get_md5(_filename)
 
-            src_hash = get_md5(item)
 
             # write_row(item, src_hash, row)
 
