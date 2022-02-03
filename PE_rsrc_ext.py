@@ -120,7 +120,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
     # Autofilter the xlsx file for easy viewing/sorting
     worksheet.autofilter(0, 0, row, 2)
     workbook.close()
